@@ -38,3 +38,4 @@ E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
 E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata Manager.csproj.CopyComplete
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\itextsharp.dll
+E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata_Manager.Properties.Resources.resources

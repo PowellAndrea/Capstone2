@@ -7,6 +7,8 @@
  *    Think about pdfDocumentID and pdfInstanceID.  Do I want to search for other instances of the same document?  
  *    Is the new destiation document a different documentID?
  * 
+ * *** Multi-Select changes not yet working
+ * 
  * Define here or in class?  Will be null until the new pdfDocument object is instanciated. 
  *    PdfWriter destinationWriter;
  *    PdfReader sourceReader;
@@ -21,6 +23,7 @@
 
 using iText.Kernel.Pdf;
 using iText.Kernel.XMP;
+using Metadata_Manager.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,7 +38,7 @@ namespace Metadata_Manager.Forms
 {
    public partial class Landing : Form
    {
-      private Record Record;
+      private PdfRecord Record;
 
       public Landing()
       {
@@ -51,8 +54,9 @@ namespace Metadata_Manager.Forms
 
           if (openPdfFile.ShowDialog() == DialogResult.OK)
           {
-            Record = new Record();
+            Record = new PdfRecord();
             int count = 0;
+
 
             foreach (string File in openPdfFile.FileNames){
                // Open Dialog filters out non-PDF files
@@ -74,8 +78,17 @@ namespace Metadata_Manager.Forms
                // Use fields from the Record object to generate table, instead of addig to .net generated columns.
                // File Name | Title | Year Published | Start Year | End Year| Author | Record Series | File Path
                dataGridMain.Rows.Add(Record.FileName,Record.Title,Record.Published, Record.YearStart, Record.YearEnd, Record.Author, Record.RecordSeries, Record.FilePath);
+               //dataGridMain.Rows.AddRange(sourceInfo.SetAuthor(Record.Author));
+               //foreach (int col in dataGridMain.ColumnCount.ToString())
+               //{   
+
+               //}
+
 
                count++;
+// Fix this for Dynamic Path
+// This works - need to add to grid after load from Record is working
+//Record.ShowPdfInBrowser(Record.FileName);
                sourceDocument.Close();
             }  
 
@@ -96,10 +109,9 @@ namespace Metadata_Manager.Forms
       {
          PdfDocument sourceDocument;
          PdfDocument targetDocument;
-         //PdfDocumentInfo sourceInfo;
          PdfDocumentInfo targetInfo;
          
-         Record = new Record();
+         Record = new PdfRecord();
 
          // Locate file to change and reopen for writing
          Record.FileName = dataGridMain.CurrentRow.Cells[0].Value.ToString();

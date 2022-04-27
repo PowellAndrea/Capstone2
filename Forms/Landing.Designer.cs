@@ -33,7 +33,8 @@
          this.menuItemOpenPdf = new System.Windows.Forms.ToolStripMenuItem();
          this.menuItemExit = new System.Windows.Forms.ToolStripMenuItem();
          this.openPdfFile = new System.Windows.Forms.OpenFileDialog();
-         this.dataGridMain = new System.Windows.Forms.DataGridView();
+         this.dataGridMain = new Metadata_Manager.Models.EditingGrid();
+         this.Preview = new System.Windows.Forms.DataGridViewLinkColumn();
          this.col_FileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
          this.col_RecordTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
          this.YearPublished = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,6 +95,7 @@
          this.dataGridMain.AllowUserToResizeRows = false;
          this.dataGridMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
          this.dataGridMain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Preview,
             this.col_FileName,
             this.col_RecordTitle,
             this.YearPublished,
@@ -112,10 +114,22 @@
          this.dataGridMain.TabIndex = 5;
          this.dataGridMain.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridMain_RowValidating);
          // 
+         // Preview
+         // 
+         this.Preview.ActiveLinkColor = System.Drawing.Color.Black;
+         this.Preview.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+         this.Preview.HeaderText = "...";
+         this.Preview.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+         this.Preview.LinkColor = System.Drawing.Color.Transparent;
+         this.Preview.Name = "Preview";
+         this.Preview.ReadOnly = true;
+         this.Preview.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+         this.Preview.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+         this.Preview.Width = 22;
+         // 
          // col_FileName
          // 
          this.col_FileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-         this.col_FileName.Frozen = true;
          this.col_FileName.HeaderText = "File Name";
          this.col_FileName.Name = "col_FileName";
          this.col_FileName.ReadOnly = true;
@@ -185,7 +199,7 @@
       private ToolStripMenuItem menuItemOpenPdf;
       private ToolStripMenuItem menuItemExit;
       private OpenFileDialog openPdfFile;
-      private DataGridView dataGridMain;
+      private DataGridViewLinkColumn Preview;
       private DataGridViewTextBoxColumn col_FileName;
       private DataGridViewTextBoxColumn col_RecordTitle;
       private DataGridViewTextBoxColumn YearPublished;
@@ -194,5 +208,6 @@
       private DataGridViewTextBoxColumn col_Author;
       private DataGridViewTextBoxColumn col_RecordSeries;
       private DataGridViewTextBoxColumn col_FilePath;
+      private Models.EditingGrid dataGridMain;
    }
 }
