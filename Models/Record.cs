@@ -31,10 +31,12 @@ namespace Metadata_Manager
       internal Guid FileId;
       /// PDF Internal version ID  xmpMM:InstanceID
       public string PdfInstanceId;
+      internal string getDFWId { get; set; }
+
+      internal string FileSize { get; }  // System managed
 
       public string FilePath;
       public string FileName;
-      public string FileSize;  // System managed
 
       /// Dublin Core 1.1 Namespace (DCMI)
       /// https://developer.adobe.com/xmp/docs/XMPNamespaces/dc/
@@ -44,8 +46,8 @@ namespace Metadata_Manager
 
       /// Pdfx 1.3 namespace - Custom Metdata
       public string RecordSeries;   //pdfx:RecordSeries
-      public string YearStart;      //pdfx:YearStart  - change this to use DCMI span?
-      public string YearEnd;        //pdfx:YearEnd
+
+
       public string Published;      //pdfx:Published - change this to use DCMI
 
       /// XMP Rights Management namespace --  //xmpRights:Marked = False  for Public Records
@@ -65,11 +67,14 @@ namespace Metadata_Manager
          Title = string.Empty;      //dc:title
          Author = string.Empty;      //dc:creator
          Description = string.Empty;   //dc:description
-         YearStart = string.Empty;     //pdfx:YearStart
-         YearEnd = string.Empty;       //pdfx:YearEnd
+         /// Move to Record Set data
+         //YearStart = string.Empty;     //pdfx:YearStart
+         //YearEnd = string.Empty;       //pdfx:YearEnd
          Published = string.Empty;     //pdfx:Published - change this to use DCMI
          RecordSeries = string.Empty;  //pdfx:RecordSeries
 
       }
+
+
    }
 }

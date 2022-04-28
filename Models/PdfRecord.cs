@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*  Andrea Powell - 04/2/2022
+ * 
+ *    Add view filter to show Retention Details (from parent Record Class)
+ *       Display as either a popup, or expand row to show detail line
+ * 
+ */
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

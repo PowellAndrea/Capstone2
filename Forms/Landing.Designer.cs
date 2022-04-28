@@ -34,15 +34,13 @@
          this.menuItemExit = new System.Windows.Forms.ToolStripMenuItem();
          this.openPdfFile = new System.Windows.Forms.OpenFileDialog();
          this.dataGridMain = new Metadata_Manager.Models.EditingGrid();
-         this.Preview = new System.Windows.Forms.DataGridViewLinkColumn();
-         this.col_FileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-         this.col_RecordTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+         this.Preview = new System.Windows.Forms.DataGridViewButtonColumn();
+         this.FileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+         this.RecordTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+         this.Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
          this.YearPublished = new System.Windows.Forms.DataGridViewTextBoxColumn();
-         this.YearStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
-         this.YearEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-         this.col_Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
-         this.col_RecordSeries = new System.Windows.Forms.DataGridViewTextBoxColumn();
-         this.col_FilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
+         this.RecordSeries = new System.Windows.Forms.DataGridViewTextBoxColumn();
+         this.FilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
          this.menuMain.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.dataGridMain)).BeginInit();
          this.SuspendLayout();
@@ -96,14 +94,12 @@
          this.dataGridMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
          this.dataGridMain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Preview,
-            this.col_FileName,
-            this.col_RecordTitle,
+            this.FileName,
+            this.RecordTitle,
+            this.Author,
             this.YearPublished,
-            this.YearStart,
-            this.YearEnd,
-            this.col_Author,
-            this.col_RecordSeries,
-            this.col_FilePath});
+            this.RecordSeries,
+            this.FilePath});
          this.dataGridMain.Dock = System.Windows.Forms.DockStyle.Fill;
          this.dataGridMain.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
          this.dataGridMain.Location = new System.Drawing.Point(0, 24);
@@ -112,67 +108,55 @@
          this.dataGridMain.RowTemplate.Height = 25;
          this.dataGridMain.Size = new System.Drawing.Size(800, 426);
          this.dataGridMain.TabIndex = 5;
-         this.dataGridMain.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridMain_RowValidating);
+         this.dataGridMain.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridMain_CellClick);
          // 
          // Preview
          // 
-         this.Preview.ActiveLinkColor = System.Drawing.Color.Black;
          this.Preview.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
          this.Preview.HeaderText = "...";
-         this.Preview.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-         this.Preview.LinkColor = System.Drawing.Color.Transparent;
          this.Preview.Name = "Preview";
          this.Preview.ReadOnly = true;
          this.Preview.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-         this.Preview.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
          this.Preview.Width = 22;
          // 
-         // col_FileName
+         // FileName
          // 
-         this.col_FileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-         this.col_FileName.HeaderText = "File Name";
-         this.col_FileName.Name = "col_FileName";
-         this.col_FileName.ReadOnly = true;
-         this.col_FileName.Width = 85;
+         this.FileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+         this.FileName.HeaderText = "File Name";
+         this.FileName.Name = "FileName";
+         this.FileName.ReadOnly = true;
+         this.FileName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+         this.FileName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+         this.FileName.Width = 66;
          // 
-         // col_RecordTitle
+         // RecordTitle
          // 
-         this.col_RecordTitle.HeaderText = "Title";
-         this.col_RecordTitle.Name = "col_RecordTitle";
+         this.RecordTitle.DataPropertyName = "Title";
+         this.RecordTitle.HeaderText = "Title";
+         this.RecordTitle.Name = "RecordTitle";
+         // 
+         // Author
+         // 
+         this.Author.DataPropertyName = "Author";
+         this.Author.HeaderText = "Author(s)";
+         this.Author.Name = "Author";
          // 
          // YearPublished
          // 
          this.YearPublished.HeaderText = "Published";
          this.YearPublished.Name = "YearPublished";
          // 
-         // YearStart
+         // RecordSeries
          // 
-         this.YearStart.HeaderText = "from Year";
-         this.YearStart.Name = "YearStart";
+         this.RecordSeries.HeaderText = "Record Series";
+         this.RecordSeries.Name = "RecordSeries";
          // 
-         // YearEnd
+         // FilePath
          // 
-         this.YearEnd.DataPropertyName = "YearEnd";
-         this.YearEnd.HeaderText = "to Year";
-         this.YearEnd.Name = "YearEnd";
-         // 
-         // col_Author
-         // 
-         this.col_Author.DataPropertyName = "Author";
-         this.col_Author.HeaderText = "Author(s)";
-         this.col_Author.Name = "col_Author";
-         // 
-         // col_RecordSeries
-         // 
-         this.col_RecordSeries.HeaderText = "Record Series";
-         this.col_RecordSeries.Name = "col_RecordSeries";
-         // 
-         // col_FilePath
-         // 
-         this.col_FilePath.HeaderText = "Path";
-         this.col_FilePath.Name = "col_FilePath";
-         this.col_FilePath.ReadOnly = true;
-         this.col_FilePath.Width = 692;
+         this.FilePath.HeaderText = "Path";
+         this.FilePath.Name = "FilePath";
+         this.FilePath.ReadOnly = true;
+         this.FilePath.Width = 692;
          // 
          // Landing
          // 
@@ -199,15 +183,13 @@
       private ToolStripMenuItem menuItemOpenPdf;
       private ToolStripMenuItem menuItemExit;
       private OpenFileDialog openPdfFile;
-      private DataGridViewLinkColumn Preview;
-      private DataGridViewTextBoxColumn col_FileName;
-      private DataGridViewTextBoxColumn col_RecordTitle;
-      private DataGridViewTextBoxColumn YearPublished;
-      private DataGridViewTextBoxColumn YearStart;
-      private DataGridViewTextBoxColumn YearEnd;
-      private DataGridViewTextBoxColumn col_Author;
-      private DataGridViewTextBoxColumn col_RecordSeries;
-      private DataGridViewTextBoxColumn col_FilePath;
       private Models.EditingGrid dataGridMain;
+      private DataGridViewButtonColumn Preview;
+      private DataGridViewTextBoxColumn FileName;
+      private DataGridViewTextBoxColumn RecordTitle;
+      private DataGridViewTextBoxColumn Author;
+      private DataGridViewTextBoxColumn YearPublished;
+      private DataGridViewTextBoxColumn RecordSeries;
+      private DataGridViewTextBoxColumn FilePath;
    }
 }

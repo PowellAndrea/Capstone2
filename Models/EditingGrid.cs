@@ -1,4 +1,5 @@
-﻿using System;
+﻿using iText.Layout.Element;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,22 +9,20 @@ namespace Metadata_Manager.Models
 {
    public class EditingGrid : DataGridView
    {
+
+
       // implemented as a singleton
       public Lazy<EditingGrid> lazy = 
          new Lazy<EditingGrid>(() => new EditingGrid());
 
       public EditingGrid Instance { get { return lazy.Value; } }
 
+
       public EditingGrid() {
+         ///  Update to manually create EditingGrid rather than use designer
+         ///SetAllHeaders();
       }
-
-
    }
 }
-
-
-
-
-
 // Use fields from the Record object to generate table, instead of addig to .net generated columns.
 // File Name | Title | Year Published | Start Year | End Year| Author | Record Series | File Path
