@@ -20,6 +20,10 @@
  *    Don't update again on exit unless there are changes
  *    Where is my pencil for editing?
  *    Grey out read-only fields
+ *    
+ *    
+ * Dan Questions?
+ *    How do I access the current cell's column by Header Name rather than index?
  */
 
 using iText.Kernel.Pdf;
@@ -58,7 +62,6 @@ namespace Metadata_Manager.Forms
             Record = new PdfRecord();
             int count = 0;
 
-
             foreach (string File in openPdfFile.FileNames)
             {
                // Open Dialog filters out non-PDF files
@@ -78,7 +81,7 @@ namespace Metadata_Manager.Forms
                
                //Record.ShowPdfInBrowser(Record.FilePath);
 
-               dataGridMain.Rows.Add("URL", Record.FileName, Record.Title, Record.Author, Record.Published, Record.RecordSeries, Record.FilePath);
+               dataGridMain.Rows.Add("...", Record.FileName, Record.Title, Record.Author, Record.Published, Record.RecordSeries, Record.FilePath);
                sourceDocument.Close();
                count++;
             
@@ -104,12 +107,105 @@ namespace Metadata_Manager.Forms
 
       private void dataGridMain_CellClick(object sender, DataGridViewCellEventArgs e)
       {
+         // If column clicked is the detail link, open document in Browser
          if (e.ColumnIndex == 0) {
             string _filePath = dataGridMain.Rows[e.RowIndex].Cells[6].Value.ToString();
 
             Record.ShowPdfInBrowser(_filePath); }
       }
 
-      // Nothing Actually Happening to Update (removed for testing)
+      private void dataGridMain_Validated(object sender, EventArgs e)
+      {
+         //foreach(sender.)
+      }
+
+      private void dataGridMain_RowValidated(object sender, DataGridViewCellEventArgs e)
+      {
+
+
+
+      }
+
+      private void dataGridMain_RowValidating_1(object sender, DataGridViewCellCancelEventArgs e)
+      {
+         PdfDocument sourceDocument;
+         PdfDocument targetDocument;
+         //PdfDocumentInfo sourceInfo;
+         PdfDocumentInfo targetInfo;
+
+
+         // Move most of this to a WriteToFile()
+
+         // Need to clear any lingering data
+
+         // Yuck again ... address columns by name rather than index
+
+
+         //("...", Record.FileName, Record.Title, Record.Author, Record.Published, Record.RecordSeries, Record.FilePath);
+
+
+         // Locate file to change and reopen for writing
+         Record.FileName = dataGridMain.CurrentRow.Cells[1].Value.ToString();
+         Record.FilePath = dataGridMain.CurrentRow.Cells[6].Value.ToString();
+
+
+
+         sourceDocument = new PdfDocument(new PdfReader(Record.FilePath));
+
+         // need for/each cell changed - currently updating anything changed or not.  Try validating as the cell is exited as well
+         // Open source document -- beware the instanceID, it changes as soon as anything in the source is changed; DocumentID is unique to each pdf
+         //sourceDocument = new PdfDocument(new PdfReader(Record.FilePath));
+
+         // currently creating duplicate documents - should I just update the current document (which does change the instance ID - probably need to look at version ID at that point too.
+         // Try a single myDocument(Reader = Source; Writer = Target)
+
+/*
+ * Change this to save the Original into an \Original folder 
+ * rather than creating an \Updated folder for new doc
+ * 
+ */
+
+         targetDocument = new PdfDocument(new PdfWriter("./Test" + Record.FileName + ".pdf"));
+         sourceDocument.CopyPagesTo(1, sourceDocument.GetNumberOfPages(), targetDocument);
+         targetInfo = sourceDocument.GetDocumentInfo();
+
+/*
+   * 
+   * The below line works - will use this when updating to use XMP object rather than GetInfo[array].
+   *    byte[] targetByte = sourceDocument.GetXmpMetadata();
+   *    
+   */
+
+
+         // Crashing when field is null - need to create if it does not exist
+         Record.Title = dataGridMain.CurrentRow.Cells[2].Value.ToString();
+         Record.Published = dataGridMain.CurrentRow.Cells[4].Value.ToString();
+         Record.Author = dataGridMain.CurrentRow.Cells[3].Value.ToString();
+         Record.RecordSeries = dataGridMain.CurrentRow.Cells[5].Value.ToString();
+
+         targetDocument.GetDocumentInfo().SetTitle(Record.Title + " standard");
+         targetInfo.SetAuthor(Record.Author + "standard");
+
+         // Dublin Core namespace
+         targetDocument.GetDocumentInfo().SetAuthor(Record.Author);  // dc:creator
+         targetDocument.GetDocumentInfo().SetTitle(Record.Title);    //dc:title
+
+         //  Adobe pdfx namespace
+
+         targetDocument.GetDocumentInfo().SetMoreInfo("RecordSeries", Record.RecordSeries);
+         targetDocument.GetDocumentInfo().SetMoreInfo("Published", Record.Published);
+         //targetDocument.GetDocumentInfo().SetMoreInfo("Description", Record.Description);
+
+         targetDocument.Close();
+         sourceDocument.Close();
+         dataGridMain.Refresh();
+      }
+
+
+      private void UpdatePdf()
+      {
+
+      }
+
    }
 }

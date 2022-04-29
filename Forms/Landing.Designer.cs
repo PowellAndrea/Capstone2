@@ -109,6 +109,9 @@
          this.dataGridMain.Size = new System.Drawing.Size(800, 426);
          this.dataGridMain.TabIndex = 5;
          this.dataGridMain.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridMain_CellClick);
+         this.dataGridMain.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridMain_RowValidated);
+         this.dataGridMain.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridMain_RowValidating_1);
+         this.dataGridMain.Validated += new System.EventHandler(this.dataGridMain_Validated);
          // 
          // Preview
          // 
