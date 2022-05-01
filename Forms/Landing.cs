@@ -169,18 +169,19 @@ namespace Metadata_Manager.Forms
          sourceDocument.CopyPagesTo(1, sourceDocument.GetNumberOfPages(), targetDocument);
          targetInfo = sourceDocument.GetDocumentInfo();
 
-/*
-   * 
-   * The below line works - will use this when updating to use XMP object rather than GetInfo[array].
-   *    byte[] targetByte = sourceDocument.GetXmpMetadata();
-   *    
-   */
+         /*
+            * 
+            * The below line works - will use this when updating to use XMP object rather than GetInfo[array].
+            *    byte[] targetByte = sourceDocument.GetXmpMetadata();
+            *    
+            */
 
 
          // Crashing when field is null - need to create if it does not exist
+
          Record.Title = dataGridMain.CurrentRow.Cells[2].Value.ToString();
-         Record.Published = dataGridMain.CurrentRow.Cells[4].Value.ToString();
          Record.Author = dataGridMain.CurrentRow.Cells[3].Value.ToString();
+         Record.Published = dataGridMain.CurrentRow.Cells[4].Value.ToString();
          Record.RecordSeries = dataGridMain.CurrentRow.Cells[5].Value.ToString();
 
          targetDocument.GetDocumentInfo().SetTitle(Record.Title + " standard");
