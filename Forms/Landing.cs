@@ -43,6 +43,10 @@ namespace Metadata_Manager.Forms
 {
    public partial class Landing : Form
    {
+
+        // Move these into the object class
+      private Record[] arrRecords;
+
       private PdfRecord Record;
 
       public Landing()
@@ -59,7 +63,7 @@ namespace Metadata_Manager.Forms
 
           if (openPdfFile.ShowDialog() == DialogResult.OK)
           {
-            Record = new PdfRecord();
+            Record = new ();
             int count = 0;
 
             foreach (string File in openPdfFile.FileNames)
@@ -101,10 +105,6 @@ namespace Metadata_Manager.Forms
          Close();
       }
 
-      //      // May want to call a Record.Validating function in class instead.
-      //      // This is firing again when the program is closed - fix the event triggers
-      private void dataGridMain_RowValidating(object sender, DataGridViewCellCancelEventArgs e) { }
-
       private void dataGridMain_CellClick(object sender, DataGridViewCellEventArgs e)
       {
          // If column clicked is the detail link, open document in Browser
@@ -119,42 +119,23 @@ namespace Metadata_Manager.Forms
          //foreach(sender.)
       }
 
-      private void dataGridMain_RowValidated(object sender, DataGridViewCellEventArgs e)
-      {
-
-
-
-      }
-
-      private void dataGridMain_RowValidating_1(object sender, DataGridViewCellCancelEventArgs e)
-      {
-         PdfDocument sourceDocument;
-         PdfDocument targetDocument;
-         //PdfDocumentInfo sourceInfo;
+      private void dataGridMain_RowValidating(object sender, DataGridViewCellCancelEventArgs e)
+      {  
+         PdfDocument    sourceDocument;
+         PdfDocument    targetDocument;
          PdfDocumentInfo targetInfo;
 
+            //("...", Record.FileName, Record.Title, Record.Author, Record.Published, Record.RecordSeries, Record.FilePath);
 
-         // Move most of this to a WriteToFile()
-
-         // Need to clear any lingering data
-
-         // Yuck again ... address columns by name rather than index
-
-
-         //("...", Record.FileName, Record.Title, Record.Author, Record.Published, Record.RecordSeries, Record.FilePath);
-
+            Record Record = new();
 
          // Locate file to change and reopen for writing
          Record.FileName = dataGridMain.CurrentRow.Cells[1].Value.ToString();
          Record.FilePath = dataGridMain.CurrentRow.Cells[6].Value.ToString();
 
-
-
          sourceDocument = new PdfDocument(new PdfReader(Record.FilePath));
 
-         // need for/each cell changed - currently updating anything changed or not.  Try validating as the cell is exited as well
          // Open source document -- beware the instanceID, it changes as soon as anything in the source is changed; DocumentID is unique to each pdf
-         //sourceDocument = new PdfDocument(new PdfReader(Record.FilePath));
 
          // currently creating duplicate documents - should I just update the current document (which does change the instance ID - probably need to look at version ID at that point too.
          // Try a single myDocument(Reader = Source; Writer = Target)

@@ -14,6 +14,7 @@
  */
 #endregion
 
+using Metadata_Manager.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,16 +25,18 @@ namespace Metadata_Manager
 {
    public class Record
    {
+      PdfRecord[] Records { get; set; }
+
       #region Class Properties
       // issues with internal and private strings - get/set revisit later
 
       /// Record object uuid
       internal Guid FileId;
       /// PDF Internal version ID  xmpMM:InstanceID
-      public string PdfInstanceId;
-      internal string getDFWId { get; set; }
+      //public string PdfInstanceId;
+      //internal string getDFWId { get; set; }
 
-      internal string FileSize { get; }  // System managed
+      //internal string FileSize { get; }  // System managed
 
       public string FilePath;
       public string FileName;
@@ -56,24 +59,23 @@ namespace Metadata_Manager
       #endregion
 
       public Record()
-      {
-         FileId = new Guid();
-         //PdfInstanceId = string.Empty; // PDF Internal version ID - needs review  xmpMM:InstanceID
-         FilePath = string.Empty;
-         FileName = string.Empty;
-         FileSize = string.Empty;  // System managed
+        {
+            // - chante to RecordID - several keys here to add. FileId = new Guid();
+            //PdfInstanceId = string.Empty; // PDF Internal version ID - needs review  xmpMM:InstanceID
+            FilePath = "  ";
+            FileName = " ";
+            //FileSize = string." ";  // System managed
 
-         // Dublin Core 1.1 Namespace
-         Title = string.Empty;      //dc:title
-         Author = string.Empty;      //dc:creator
-         Description = string.Empty;   //dc:description
-         /// Move to Record Set data
-         //YearStart = string.Empty;     //pdfx:YearStart
-         //YearEnd = string.Empty;       //pdfx:YearEnd
-         Published = string.Empty;     //pdfx:Published - change this to use DCMI
-         RecordSeries = string.Empty;  //pdfx:RecordSeries
-
-      }
+            // Dublin Core 1.1 Namespace
+            Title = " ";      //dc:title
+            Author = " ";      //dc:creator
+            Description = " ";   //dc:description
+            /// Move to Record Set data
+            //YearStart = string.Empty;     //pdfx:YearStart
+            //YearEnd = string.Empty;       //pdfx:YearEnd
+            Published = " ";     //pdfx:Published - change this to use DCMI
+            RecordSeries = " ";  //pdfx:RecordSeries
+        }
 
 
    }
