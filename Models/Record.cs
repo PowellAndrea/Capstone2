@@ -76,7 +76,5 @@ namespace Metadata_Manager
             Published = " ";     //pdfx:Published - change this to use DCMI
             RecordSeries = " ";  //pdfx:RecordSeries
         }
-
-
    }
 }

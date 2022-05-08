@@ -35,8 +35,6 @@
 			this.menuItemExit = new System.Windows.Forms.ToolStripMenuItem();
 			this.openPdfFile = new System.Windows.Forms.OpenFileDialog();
 			this.dataGridMain = new Metadata_Manager.Models.EditingGrid();
-			this.recordBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.pdfRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.Details = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.FileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,10 +42,12 @@
 			this.Published = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.RecordSeries = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.FilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.pdfRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.recordBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.menuMain.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridMain)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.recordBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pdfRecordBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.recordBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// menuMain
@@ -116,14 +116,6 @@
 			this.dataGridMain.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridMain_CellClick);
 			this.dataGridMain.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridMain_RowValidating);
 			// 
-			// recordBindingSource
-			// 
-			this.recordBindingSource.DataSource = typeof(Metadata_Manager.Record);
-			// 
-			// pdfRecordBindingSource
-			// 
-			this.pdfRecordBindingSource.DataSource = typeof(Metadata_Manager.Models.PdfRecord);
-			// 
 			// Details
 			// 
 			this.Details.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -160,20 +152,32 @@
 			// 
 			// Published
 			// 
+			this.Published.DataPropertyName = "Published";
 			this.Published.HeaderText = "Published";
 			this.Published.Name = "Published";
 			// 
 			// RecordSeries
 			// 
+			this.RecordSeries.DataPropertyName = "RecordSeries";
 			this.RecordSeries.HeaderText = "Record Series";
 			this.RecordSeries.Name = "RecordSeries";
 			// 
 			// FilePath
 			// 
+			this.FilePath.DataPropertyName = "FilePath";
 			this.FilePath.HeaderText = "Path";
 			this.FilePath.Name = "FilePath";
 			this.FilePath.ReadOnly = true;
 			this.FilePath.Width = 692;
+			// 
+			// pdfRecordBindingSource
+			// 
+			this.pdfRecordBindingSource.DataSource = typeof(Metadata_Manager.Models.PdfRecord);
+			// 
+			// recordBindingSource
+			// 
+			this.recordBindingSource.DataSource = typeof(Metadata_Manager.Record);
+			this.recordBindingSource.CurrentChanged += new System.EventHandler(this.recordBindingSource_CurrentChanged);
 			// 
 			// Landing
 			// 
@@ -188,8 +192,8 @@
 			this.menuMain.ResumeLayout(false);
 			this.menuMain.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridMain)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.recordBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pdfRecordBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.recordBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -210,7 +214,7 @@
 		private DataGridViewTextBoxColumn Published;
 		private DataGridViewTextBoxColumn RecordSeries;
 		private DataGridViewTextBoxColumn FilePath;
-		private BindingSource recordBindingSource;
 		private BindingSource pdfRecordBindingSource;
+		private BindingSource recordBindingSource;
 	}
 }
