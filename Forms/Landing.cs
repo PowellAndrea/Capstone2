@@ -21,10 +21,13 @@
  *    Where is my pencil for editing?
  *    Grey out read-only fields
  *    
- *    
- * Dan Questions?
- *    How do I access the current cell's column by Header Name rather than index?
- */
+
+            * 
+            * The below line works - will use this when updating to use XMP object rather than GetInfo[array].
+            *    byte[] targetByte = sourceDocument.GetXmpMetadata();
+            *    
+
+*/
 
 using iText.Kernel.Pdf;
 using iText.Kernel.XMP;
@@ -45,7 +48,7 @@ namespace Metadata_Manager.Forms
    {
 
         // Move these into the object class
-      private Record[] arrRecords;
+      //private Record[] arrRecords;
 
       private PdfRecord Record;
 
@@ -88,11 +91,7 @@ namespace Metadata_Manager.Forms
                dataGridMain.Rows.Add("...", Record.FileName, Record.Title, Record.Author, Record.Published, Record.RecordSeries, Record.FilePath);
                sourceDocument.Close();
                count++;
-            
             }
-// Fix this for Dynamic Path
-// This works - need to add to grid after load from Record is working
-//Record.ShowPdfInBrowser(Record.FileName);
           dataGridMain.Refresh();
           dataGridMain.Show();
          }
@@ -114,10 +113,6 @@ namespace Metadata_Manager.Forms
             Record.ShowPdfInBrowser(_filePath); }
       }
 
-      private void dataGridMain_Validated(object sender, EventArgs e)
-      {
-         //foreach(sender.)
-      }
 
       private void dataGridMain_RowValidating(object sender, DataGridViewCellCancelEventArgs e)
       {  
@@ -125,38 +120,16 @@ namespace Metadata_Manager.Forms
          PdfDocument    targetDocument;
          PdfDocumentInfo targetInfo;
 
-            //("...", Record.FileName, Record.Title, Record.Author, Record.Published, Record.RecordSeries, Record.FilePath);
-
-            Record Record = new();
+			Record Record = new();
 
          // Locate file to change and reopen for writing
          Record.FileName = dataGridMain.CurrentRow.Cells[1].Value.ToString();
          Record.FilePath = dataGridMain.CurrentRow.Cells[6].Value.ToString();
 
          sourceDocument = new PdfDocument(new PdfReader(Record.FilePath));
-
-         // Open source document -- beware the instanceID, it changes as soon as anything in the source is changed; DocumentID is unique to each pdf
-
-         // currently creating duplicate documents - should I just update the current document (which does change the instance ID - probably need to look at version ID at that point too.
-         // Try a single myDocument(Reader = Source; Writer = Target)
-
-/*
- * Change this to save the Original into an \Original folder 
- * rather than creating an \Updated folder for new doc
- * 
- */
-
-         targetDocument = new PdfDocument(new PdfWriter("./Test" + Record.FileName + ".pdf"));
+         targetDocument = new PdfDocument(new PdfWriter("./Test" + Record.FileName + ".pdf"));	// Check this - are all of the original properties going too? ** Fix This to duplicate whole file
          sourceDocument.CopyPagesTo(1, sourceDocument.GetNumberOfPages(), targetDocument);
          targetInfo = sourceDocument.GetDocumentInfo();
-
-         /*
-            * 
-            * The below line works - will use this when updating to use XMP object rather than GetInfo[array].
-            *    byte[] targetByte = sourceDocument.GetXmpMetadata();
-            *    
-            */
-
 
          // Crashing when field is null - need to create if it does not exist
 
@@ -173,7 +146,6 @@ namespace Metadata_Manager.Forms
          targetDocument.GetDocumentInfo().SetTitle(Record.Title);    //dc:title
 
          //  Adobe pdfx namespace
-
          targetDocument.GetDocumentInfo().SetMoreInfo("RecordSeries", Record.RecordSeries);
          targetDocument.GetDocumentInfo().SetMoreInfo("Published", Record.Published);
          //targetDocument.GetDocumentInfo().SetMoreInfo("Description", Record.Description);
@@ -182,12 +154,5 @@ namespace Metadata_Manager.Forms
          sourceDocument.Close();
          dataGridMain.Refresh();
       }
-
-
-      private void UpdatePdf()
-      {
-
-      }
-
    }
 }
