@@ -8,12 +8,6 @@
  *    Is the new destiation document a different documentID?
  * 
  * *** Multi-Select changes not yet working
- * *** Add validation back or new info is never written?
- * 
- * Define here or in class?  Will be null until the new pdfDocument object is instanciated. 
- *    PdfWriter destinationWriter;
- *    PdfReader sourceReader;
- * 
  *    Look at itext7 GetXmpMetadata(bool createNew)
  *    
  *    Set font if dirty & update when written
@@ -61,34 +55,40 @@ namespace Metadata_Manager.Forms
       {
          PdfDocument sourceDocument;
          PdfDocumentInfo sourceInfo;
+		 List <Record> recordList = new List <Record>();
+
 
          dataGridMain.Rows.Clear();
 
           if (openPdfFile.ShowDialog() == DialogResult.OK)
-          {
-            Record = new ();
+			{
+				recordList = new List <Record>();
+
+
             int count = 0;
 
             foreach (string File in openPdfFile.FileNames)
             {
-               // Open Dialog filters out non-PDF files
+					Record = new();
+					// Open Dialog filters out non-PDF files
 
-               Record.FilePath = openPdfFile.FileNames[count];
+				Record.FilePath = openPdfFile.FileNames[count];
                Record.FileName = openPdfFile.SafeFileNames[count];
 
-               // fix to use a single reader?
-               // move all this stuff to PdfRecordClass
+               // move all this stuff to PdfRecordClass ?
                sourceDocument = new PdfDocument(new PdfReader(Record.FilePath));
                sourceInfo = sourceDocument.GetDocumentInfo();
 
-               Record.Title = testVoid(sourceInfo.GetTitle());
-               Record.Author = testVoid(sourceInfo.GetAuthor());
-               Record.Published = testVoid(sourceInfo.GetMoreInfo("Published"));
-               Record.RecordSeries = testVoid(sourceInfo.GetMoreInfo("RecordSeries"));
-
-               dataGridMain.Rows.Add("...", Record.FileName, Record.Title, Record.Author, Record.Published, Record.RecordSeries, Record.FilePath);
-               sourceDocument.Close();
-               count++;
+				Record.Title = testVoid(sourceInfo.GetTitle());
+				Record.Author = testVoid(sourceInfo.GetAuthor());
+				Record.Published = testVoid(sourceInfo.GetMoreInfo("Published"));
+				Record.RecordSeries = testVoid(sourceInfo.GetMoreInfo("RecordSeries"));
+					
+				// Fix databinding
+				recordList.Add(Record);
+				dataGridMain.Rows.Add("...", Record.FileName, Record.Title, Record.Author, Record.Published, Record.RecordSeries, Record.FilePath);
+				sourceDocument.Close();
+				count++;
             }
           dataGridMain.Refresh();
           dataGridMain.Show();
@@ -141,14 +141,20 @@ namespace Metadata_Manager.Forms
          Record.Published = dataGridMain.CurrentRow.Cells[4].Value.ToString();
          Record.RecordSeries = dataGridMain.CurrentRow.Cells[5].Value.ToString();
 
-         targetDocument.GetDocumentInfo().SetTitle(Record.Title + " standard");
-         targetInfo.SetAuthor(Record.Author + "standard");
+		/*
+		* Do I need the Standard keyword?
+		* 			targetDocument.GetDocumentInfo().SetTitle(Record.Title + " standard");
+		*		targetInfo.SetAuthor(Record.Author + "standard");
+		*/
+		targetDocument.GetDocumentInfo().SetTitle(Record.Title);
+		targetInfo.SetAuthor(Record.Author);
+
 
 			// Dublin Core namespace
          targetDocument.GetDocumentInfo().SetAuthor(Record.Author);  // dc:creator
          targetDocument.GetDocumentInfo().SetTitle(Record.Title);    //dc:title
 
-         //  Adobe pdfx namespac`e
+         //  Adobe pdfx namespace
          targetDocument.GetDocumentInfo().SetMoreInfo("RecordSeries", Record.RecordSeries);
          targetDocument.GetDocumentInfo().SetMoreInfo("Published", Record.Published);
 
@@ -156,5 +162,10 @@ namespace Metadata_Manager.Forms
          sourceDocument.Close();
          dataGridMain.Refresh();
       }
+
+		private void pdfRecordBindingSource_CurrentChanged(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

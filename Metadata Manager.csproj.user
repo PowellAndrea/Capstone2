@@ -7,8 +7,6 @@
     <Compile Update="Models\EditingGrid.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Models\EditingGridView.cs">
-      <SubType>Component</SubType>
-    </Compile>
   </ItemGroup>
+  <ItemGroup />
 </Project>

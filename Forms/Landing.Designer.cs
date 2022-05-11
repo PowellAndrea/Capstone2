@@ -167,6 +167,7 @@
 			// pdfRecordBindingSource
 			// 
 			this.pdfRecordBindingSource.DataSource = typeof(Metadata_Manager.Models.PdfRecord);
+			this.pdfRecordBindingSource.CurrentChanged += new System.EventHandler(this.pdfRecordBindingSource_CurrentChanged);
 			// 
 			// Landing
 			// 

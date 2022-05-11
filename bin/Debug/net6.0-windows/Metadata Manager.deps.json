@@ -8,19 +8,11 @@
     ".NETCoreApp,Version=v6.0": {
       "Metadata Manager/1.0.0": {
         "dependencies": {
-          "iTextSharp": "5.5.13.3",
+          "Uno.Microsoft.Toolkit.Uwp.UI.Controls.DataGrid": "7.1.11",
           "itext7": "7.2.2"
         },
         "runtime": {
           "Metadata Manager.dll": {}
-        }
-      },
-      "BouncyCastle/1.8.9": {
-        "runtime": {
-          "lib/BouncyCastle.Crypto.dll": {
-            "assemblyVersion": "1.8.9.0",
-            "fileVersion": "1.8.20343.1"
-          }
         }
       },
       "itext7/7.2.2": {
@@ -89,17 +81,6 @@
           "lib/netstandard2.0/itext.commons.dll": {
             "assemblyVersion": "7.2.2.0",
             "fileVersion": "7.2.2.0"
-          }
-        }
-      },
-      "iTextSharp/5.5.13.3": {
-        "dependencies": {
-          "BouncyCastle": "1.8.9"
-        },
-        "runtime": {
-          "lib/itextsharp.dll": {
-            "assemblyVersion": "5.5.13.3",
-            "fileVersion": "5.5.13.3"
           }
         }
       },
@@ -270,7 +251,14 @@
           }
         }
       },
-      "Portable.BouncyCastle/1.8.9": {},
+      "Portable.BouncyCastle/1.8.9": {
+        "runtime": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "assemblyVersion": "1.8.9.0",
+            "fileVersion": "1.8.9.1"
+          }
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
@@ -333,6 +321,18 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
+      "System.Collections.Immutable/1.3.1": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.1",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0"
+        }
+      },
       "System.Collections.NonGeneric/4.3.0": {
         "dependencies": {
           "System.Diagnostics.Debug": "4.3.0",
@@ -343,6 +343,7 @@
           "System.Threading": "4.3.0"
         }
       },
+      "System.ComponentModel.Annotations/4.5.0": {},
       "System.Diagnostics.Debug/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.1",
@@ -481,6 +482,8 @@
           "System.Threading": "4.3.0"
         }
       },
+      "System.Memory/4.5.2": {},
+      "System.Numerics.Vectors/4.5.0": {},
       "System.ObjectModel/4.0.12": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -592,6 +595,17 @@
           "System.Runtime.InteropServices": "4.3.0",
           "System.Threading": "4.3.0",
           "runtime.native.System": "4.3.0"
+        }
+      },
+      "System.Runtime.InteropServices.WindowsRuntime/4.3.0": {
+        "dependencies": {
+          "System.Runtime": "4.3.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Runtime.InteropServices.WindowsRuntime.dll": {
+            "assemblyVersion": "4.0.2.0",
+            "fileVersion": "4.6.24705.1"
+          }
         }
       },
       "System.Runtime.Loader/4.3.0": {
@@ -801,6 +815,88 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0"
         }
+      },
+      "Uno.Diagnostics.Eventing/2.0.0-dev.22": {
+        "runtime": {
+          "lib/net5.0/Uno.Diagnostics.Eventing.dll": {
+            "assemblyVersion": "255.255.255.255",
+            "fileVersion": "255.255.255.255"
+          }
+        }
+      },
+      "Uno.Foundation.Logging/4.0.0-dev.5688": {
+        "runtime": {
+          "lib/net6.0/Uno.Foundation.Logging.dll": {
+            "assemblyVersion": "255.255.255.255",
+            "fileVersion": "255.255.255.255"
+          }
+        }
+      },
+      "Uno.Microsoft.Toolkit.Uwp.UI.Controls.DataGrid/7.1.11": {
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.5.0",
+          "Uno.UI": "4.0.0-dev.5688"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.dll": {
+            "assemblyVersion": "7.1.0.0",
+            "fileVersion": "7.1.11.1"
+          }
+        }
+      },
+      "Uno.SourceGenerationTasks/3.2.0": {},
+      "Uno.UI/4.0.0-dev.5688": {
+        "dependencies": {
+          "System.Collections.Immutable": "1.3.1",
+          "System.Memory": "4.5.2",
+          "System.Numerics.Vectors": "4.5.0",
+          "System.Runtime.InteropServices.WindowsRuntime": "4.3.0",
+          "Uno.Diagnostics.Eventing": "2.0.0-dev.22",
+          "Uno.Foundation.Logging": "4.0.0-dev.5688",
+          "Uno.SourceGenerationTasks": "3.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Uno.Foundation.dll": {
+            "assemblyVersion": "255.255.255.255",
+            "fileVersion": "255.255.255.255"
+          },
+          "lib/netstandard2.0/Uno.UI.Composition.dll": {
+            "assemblyVersion": "255.255.255.255",
+            "fileVersion": "255.255.255.255"
+          },
+          "lib/netstandard2.0/Uno.UI.Dispatching.dll": {
+            "assemblyVersion": "255.255.255.255",
+            "fileVersion": "255.255.255.255"
+          },
+          "lib/netstandard2.0/Uno.UI.FluentTheme.dll": {
+            "assemblyVersion": "255.255.255.255",
+            "fileVersion": "255.255.255.255"
+          },
+          "lib/netstandard2.0/Uno.UI.FluentTheme.v1.dll": {
+            "assemblyVersion": "255.255.255.255",
+            "fileVersion": "255.255.255.255"
+          },
+          "lib/netstandard2.0/Uno.UI.FluentTheme.v2.dll": {
+            "assemblyVersion": "255.255.255.255",
+            "fileVersion": "255.255.255.255"
+          },
+          "lib/netstandard2.0/Uno.UI.Toolkit.dll": {
+            "assemblyVersion": "255.255.255.255",
+            "fileVersion": "255.255.255.255"
+          },
+          "lib/netstandard2.0/Uno.UI.dll": {
+            "assemblyVersion": "255.255.255.255",
+            "fileVersion": "255.255.255.255"
+          },
+          "lib/netstandard2.0/Uno.Xaml.dll": {
+            "assemblyVersion": "255.255.255.255",
+            "fileVersion": "255.255.255.255"
+          },
+          "lib/netstandard2.0/Uno.dll": {
+            "assemblyVersion": "255.255.255.255",
+            "fileVersion": "255.255.255.255"
+          }
+        }
       }
     }
   },
@@ -809,13 +905,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "BouncyCastle/1.8.9": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-axnBgvdD5n+FnEG6efk/tfKuMFru7R/EoISH9zjh319yb3HD24TEHSAbNN/lTRT2ulOGRxDgOsCjkuk08iwWPg==",
-      "path": "bouncycastle/1.8.9",
-      "hashPath": "bouncycastle.1.8.9.nupkg.sha512"
     },
     "itext7/7.2.2": {
       "type": "package",
@@ -830,13 +919,6 @@
       "sha512": "sha512-PV3djjNVMD3qC5J5TOrwojubR9ygZIoPNTMQsN45kIh5JRzRI08q1N2MI8XgbzHUNMdOXgRRz136QmniZ8jHVw==",
       "path": "itext7.commons/7.2.2",
       "hashPath": "itext7.commons.7.2.2.nupkg.sha512"
-    },
-    "iTextSharp/5.5.13.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-vtnMhTEJdZFCkLqaQLjD8aqTBIVKHPrSFuSXnxbLEJlvE/j/l88fvG9wtsejXTmhtErMo0lA9T2LdfdfbwplYw==",
-      "path": "itextsharp/5.5.13.3",
-      "hashPath": "itextsharp.5.5.13.3.nupkg.sha512"
     },
     "Microsoft.CSharp/4.0.1": {
       "type": "package",
@@ -1062,12 +1144,26 @@
       "path": "system.collections.concurrent/4.3.0",
       "hashPath": "system.collections.concurrent.4.3.0.nupkg.sha512"
     },
+    "System.Collections.Immutable/1.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-n+AGX7zmiZumW9aggOkXaHzUeAS3EfeTErnkKCusyONUozbTv+kMb8VE36m+ldV6kF9g57G2c641KCdgH9E0pg==",
+      "path": "system.collections.immutable/1.3.1",
+      "hashPath": "system.collections.immutable.1.3.1.nupkg.sha512"
+    },
     "System.Collections.NonGeneric/4.3.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-prtjIEMhGUnQq6RnPEYLpFt8AtLbp9yq2zxOSrY7KJJZrw25Fi97IzBqY7iqssbM61Ek5b8f3MG/sG1N2sN5KA==",
       "path": "system.collections.nongeneric/4.3.0",
       "hashPath": "system.collections.nongeneric.4.3.0.nupkg.sha512"
+    },
+    "System.ComponentModel.Annotations/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UxYQ3FGUOtzJ7LfSdnYSFd7+oEv6M8NgUatatIN2HxNtDdlcvFAf+VIq4Of9cDMJEJC0aSRv/x898RYhB4Yppg==",
+      "path": "system.componentmodel.annotations/4.5.0",
+      "hashPath": "system.componentmodel.annotations.4.5.0.nupkg.sha512"
     },
     "System.Diagnostics.Debug/4.3.0": {
       "type": "package",
@@ -1152,6 +1248,20 @@
       "sha512": "sha512-I+y02iqkgmCAyfbqOmSDOgqdZQ5tTj80Akm5BPSS8EeB0VGWdy6X1KCoYe8Pk6pwDoAKZUOdLVxnTJcExiv5zw==",
       "path": "system.linq.expressions/4.1.0",
       "hashPath": "system.linq.expressions.4.1.0.nupkg.sha512"
+    },
+    "System.Memory/4.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fvq1GNmUFwbKv+aLVYYdgu/+gc8Nu9oFujOxIjPrsf+meis9JBzTPDL6aP/eeGOz9yPj6rRLUbOjKMpsMEWpNg==",
+      "path": "system.memory/4.5.2",
+      "hashPath": "system.memory.4.5.2.nupkg.sha512"
+    },
+    "System.Numerics.Vectors/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
+      "path": "system.numerics.vectors/4.5.0",
+      "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
     },
     "System.ObjectModel/4.0.12": {
       "type": "package",
@@ -1250,6 +1360,13 @@
       "sha512": "sha512-hWPhJxc453RCa8Z29O91EmfGeZIHX1ZH2A8L6lYQVSaKzku2DfArSfMEb1/MYYzPQRJZeu0c9dmYeJKxW5Fgng==",
       "path": "system.runtime.interopservices.runtimeinformation/4.0.0",
       "hashPath": "system.runtime.interopservices.runtimeinformation.4.0.0.nupkg.sha512"
+    },
+    "System.Runtime.InteropServices.WindowsRuntime/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-J4GUi3xZQLUBasNwZnjrffN8i5wpHrBtZoLG+OhRyGo/+YunMRWWtwoMDlUAIdmX0uRfpHIBDSV6zyr3yf00TA==",
+      "path": "system.runtime.interopservices.windowsruntime/4.3.0",
+      "hashPath": "system.runtime.interopservices.windowsruntime.4.3.0.nupkg.sha512"
     },
     "System.Runtime.Loader/4.3.0": {
       "type": "package",
@@ -1390,6 +1507,41 @@
       "sha512": "sha512-lJ8AxvkX7GQxpC6GFCeBj8ThYVyQczx2+f/cWHJU8tjS7YfI6Cv6bon70jVEgs2CiFbmmM8b9j1oZVx0dSI2Ww==",
       "path": "system.xml.xmldocument/4.3.0",
       "hashPath": "system.xml.xmldocument.4.3.0.nupkg.sha512"
+    },
+    "Uno.Diagnostics.Eventing/2.0.0-dev.22": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-X37agxr7XzlTDcwe4gbG8xsJqrBaIYUoKx3scFsle0Yg+5luUlbMDcnQxYK9HPhrV+n7FkzuGdslb9jPWuqwvg==",
+      "path": "uno.diagnostics.eventing/2.0.0-dev.22",
+      "hashPath": "uno.diagnostics.eventing.2.0.0-dev.22.nupkg.sha512"
+    },
+    "Uno.Foundation.Logging/4.0.0-dev.5688": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TICx8u5XZMp0AAdFX0uBTR0FxJKKcEUzj1Rvitl5+93L7qHKve1g9sMbqS9B9x6qZZEpR+cMwn/dJU2l5/xHlA==",
+      "path": "uno.foundation.logging/4.0.0-dev.5688",
+      "hashPath": "uno.foundation.logging.4.0.0-dev.5688.nupkg.sha512"
+    },
+    "Uno.Microsoft.Toolkit.Uwp.UI.Controls.DataGrid/7.1.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Sp0tKba0OxqS/Vo87KOnoXPHsK3vbYhMRGY33MrxZOIEVMUe3xkEuZ6ZU64bO/jX375xRHqbFpxm7/jwvklUBA==",
+      "path": "uno.microsoft.toolkit.uwp.ui.controls.datagrid/7.1.11",
+      "hashPath": "uno.microsoft.toolkit.uwp.ui.controls.datagrid.7.1.11.nupkg.sha512"
+    },
+    "Uno.SourceGenerationTasks/3.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TMaytZyopgcU+81HNsqfB1tiDH9getRaseWU+ZmVQNVY7tZY4r2qiCkoh/XrUOVJnW3tWTRJ1zA/3JuxzJD2Nw==",
+      "path": "uno.sourcegenerationtasks/3.2.0",
+      "hashPath": "uno.sourcegenerationtasks.3.2.0.nupkg.sha512"
+    },
+    "Uno.UI/4.0.0-dev.5688": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-X9mGCmMeocjsGCB5K9pRIpu/FDKwr066ykLXa0i2qNTl4u78vjjIJFlFFJ3CJgSX61FOYyY/aheiGYrYXpGxyQ==",
+      "path": "uno.ui/4.0.0-dev.5688",
+      "hashPath": "uno.ui.4.0.0-dev.5688.nupkg.sha512"
     }
   }
 }

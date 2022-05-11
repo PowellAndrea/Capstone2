@@ -7,20 +7,18 @@ using System.Threading.Tasks;
 
 namespace Metadata_Manager.Models
 {
+
    public class EditingGrid : DataGridView
    {
-
-
-      // implemented as a singleton
-      public Lazy<EditingGrid> lazy = 
+		// implemented as a singleton
+		public Lazy<EditingGrid> lazy = 
          new Lazy<EditingGrid>(() => new EditingGrid());
 
       public EditingGrid Instance { get { return lazy.Value; } }
 
 
       public EditingGrid() {
-         ///  Update to manually create EditingGrid rather than use designer
-         ///SetAllHeaders();
+
       }
    }
 }

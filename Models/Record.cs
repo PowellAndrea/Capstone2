@@ -30,13 +30,12 @@ namespace Metadata_Manager
       #region Class Properties
       // issues with internal and private strings - get/set revisit later
 
-      /// Record object uuid
       internal Guid FileId;
       /// PDF Internal version ID  xmpMM:InstanceID
       //public string PdfInstanceId;
       //internal string getDFWId { get; set; }
 
-      //internal string FileSize { get; }  // System managed
+      internal string FileSize { get; }  // System managed
 
       public string FilePath;
       public string FileName;

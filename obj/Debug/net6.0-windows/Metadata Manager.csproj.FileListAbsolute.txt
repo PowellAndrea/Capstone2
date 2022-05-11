@@ -3,7 +3,6 @@ E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Metadata Manager.deps.j
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Metadata Manager.runtimeconfig.json
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Metadata Manager.dll
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Metadata Manager.pdb
-E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\itext.barcodes.dll
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\itext.forms.dll
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\itext.io.dll
@@ -14,7 +13,6 @@ E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\itext.sign.dll
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\itext.styledxmlparser.dll
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\itext.svg.dll
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\itext.commons.dll
-E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\itextsharp.dll
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Microsoft.DotNet.PlatformAbstractions.dll
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.dll
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
@@ -24,6 +22,21 @@ E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Microsoft.Extensions.Lo
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.dll
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
+E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\System.Runtime.InteropServices.WindowsRuntime.dll
+E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Uno.Diagnostics.Eventing.dll
+E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Uno.Foundation.Logging.dll
+E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.dll
+E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Uno.Foundation.dll
+E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Uno.UI.Composition.dll
+E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Uno.UI.Dispatching.dll
+E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Uno.UI.FluentTheme.dll
+E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Uno.UI.FluentTheme.v1.dll
+E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Uno.UI.FluentTheme.v2.dll
+E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Uno.UI.Toolkit.dll
+E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Uno.UI.dll
+E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Uno.Xaml.dll
+E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Uno.dll
 E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata Manager.csproj.AssemblyReference.cache
 E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata_Manager.Forms.Landing.resources
 E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata_Manager.Properties.Resources.resources
