@@ -156,10 +156,5 @@ namespace Metadata_Manager.Forms
          sourceDocument.Close();
          dataGridMain.Refresh();
       }
-
-		private void recordBindingSource_CurrentChanged(object sender, EventArgs e)
-		{
-			dataGridMain.DataSource = recordBindingSource.DataSource;
-		}
 	}
 }

@@ -43,19 +43,9 @@
 			this.RecordSeries = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.FilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.pdfRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.recordBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.pdfRecordBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-			this.recordBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-			this.pdfRecordBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-			this.recordBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
 			this.menuMain.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridMain)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pdfRecordBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.recordBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pdfRecordBindingSource1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.recordBindingSource1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pdfRecordBindingSource2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.recordBindingSource2)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// menuMain
@@ -178,27 +168,6 @@
 			// 
 			this.pdfRecordBindingSource.DataSource = typeof(Metadata_Manager.Models.PdfRecord);
 			// 
-			// recordBindingSource
-			// 
-			this.recordBindingSource.DataSource = typeof(Metadata_Manager.Record);
-			this.recordBindingSource.CurrentChanged += new System.EventHandler(this.recordBindingSource_CurrentChanged);
-			// 
-			// pdfRecordBindingSource1
-			// 
-			this.pdfRecordBindingSource1.DataSource = typeof(Metadata_Manager.Models.PdfRecord);
-			// 
-			// recordBindingSource1
-			// 
-			this.recordBindingSource1.DataSource = typeof(Metadata_Manager.Record);
-			// 
-			// pdfRecordBindingSource2
-			// 
-			this.pdfRecordBindingSource2.DataSource = typeof(Metadata_Manager.Models.PdfRecord);
-			// 
-			// recordBindingSource2
-			// 
-			this.recordBindingSource2.DataSource = typeof(Metadata_Manager.Record);
-			// 
 			// Landing
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -213,11 +182,6 @@
 			this.menuMain.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridMain)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pdfRecordBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.recordBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pdfRecordBindingSource1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.recordBindingSource1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pdfRecordBindingSource2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.recordBindingSource2)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -239,10 +203,5 @@
 		private DataGridViewTextBoxColumn RecordSeries;
 		private DataGridViewTextBoxColumn FilePath;
 		private BindingSource pdfRecordBindingSource;
-		private BindingSource recordBindingSource;
-		private BindingSource pdfRecordBindingSource1;
-		private BindingSource recordBindingSource1;
-		private BindingSource pdfRecordBindingSource2;
-		private BindingSource recordBindingSource2;
 	}
 }
