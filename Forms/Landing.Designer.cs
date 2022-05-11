@@ -44,10 +44,18 @@
 			this.FilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.pdfRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.recordBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.pdfRecordBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+			this.recordBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+			this.pdfRecordBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+			this.recordBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
 			this.menuMain.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridMain)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pdfRecordBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.recordBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pdfRecordBindingSource1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.recordBindingSource1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pdfRecordBindingSource2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.recordBindingSource2)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// menuMain
@@ -94,7 +102,6 @@
 			// 
 			this.dataGridMain.AllowUserToAddRows = false;
 			this.dataGridMain.AllowUserToDeleteRows = false;
-			this.dataGridMain.AllowUserToOrderColumns = true;
 			this.dataGridMain.AllowUserToResizeRows = false;
 			this.dataGridMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridMain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -123,7 +130,6 @@
 			this.Details.Frozen = true;
 			this.Details.HeaderText = "...";
 			this.Details.Name = "Details";
-			this.Details.ReadOnly = true;
 			this.Details.Resizable = System.Windows.Forms.DataGridViewTriState.False;
 			this.Details.Width = 22;
 			// 
@@ -134,7 +140,6 @@
 			this.FileName.Frozen = true;
 			this.FileName.HeaderText = "File Name";
 			this.FileName.Name = "FileName";
-			this.FileName.ReadOnly = true;
 			this.FileName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
 			this.FileName.Width = 85;
 			// 
@@ -167,7 +172,6 @@
 			this.FilePath.DataPropertyName = "FilePath";
 			this.FilePath.HeaderText = "Path";
 			this.FilePath.Name = "FilePath";
-			this.FilePath.ReadOnly = true;
 			this.FilePath.Width = 692;
 			// 
 			// pdfRecordBindingSource
@@ -178,6 +182,22 @@
 			// 
 			this.recordBindingSource.DataSource = typeof(Metadata_Manager.Record);
 			this.recordBindingSource.CurrentChanged += new System.EventHandler(this.recordBindingSource_CurrentChanged);
+			// 
+			// pdfRecordBindingSource1
+			// 
+			this.pdfRecordBindingSource1.DataSource = typeof(Metadata_Manager.Models.PdfRecord);
+			// 
+			// recordBindingSource1
+			// 
+			this.recordBindingSource1.DataSource = typeof(Metadata_Manager.Record);
+			// 
+			// pdfRecordBindingSource2
+			// 
+			this.pdfRecordBindingSource2.DataSource = typeof(Metadata_Manager.Models.PdfRecord);
+			// 
+			// recordBindingSource2
+			// 
+			this.recordBindingSource2.DataSource = typeof(Metadata_Manager.Record);
 			// 
 			// Landing
 			// 
@@ -194,6 +214,10 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataGridMain)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pdfRecordBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.recordBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pdfRecordBindingSource1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.recordBindingSource1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pdfRecordBindingSource2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.recordBindingSource2)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -216,5 +240,9 @@
 		private DataGridViewTextBoxColumn FilePath;
 		private BindingSource pdfRecordBindingSource;
 		private BindingSource recordBindingSource;
+		private BindingSource pdfRecordBindingSource1;
+		private BindingSource recordBindingSource1;
+		private BindingSource pdfRecordBindingSource2;
+		private BindingSource recordBindingSource2;
 	}
 }

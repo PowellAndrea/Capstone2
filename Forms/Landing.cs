@@ -81,12 +81,10 @@ namespace Metadata_Manager.Forms
                sourceDocument = new PdfDocument(new PdfReader(Record.FilePath));
                sourceInfo = sourceDocument.GetDocumentInfo();
 
-               Record.Title = sourceInfo.GetTitle();
-               Record.Author = sourceInfo.GetAuthor();
-               Record.Published = sourceInfo.GetMoreInfo("Published");
-               Record.RecordSeries = sourceInfo.GetMoreInfo("RecordSeries");
-               
-               //Record.ShowPdfInBrowser(Record.FilePath);
+               Record.Title = testVoid(sourceInfo.GetTitle());
+               Record.Author = testVoid(sourceInfo.GetAuthor());
+               Record.Published = testVoid(sourceInfo.GetMoreInfo("Published"));
+               Record.RecordSeries = testVoid(sourceInfo.GetMoreInfo("RecordSeries"));
 
                dataGridMain.Rows.Add("...", Record.FileName, Record.Title, Record.Author, Record.Published, Record.RecordSeries, Record.FilePath);
                sourceDocument.Close();
@@ -97,6 +95,12 @@ namespace Metadata_Manager.Forms
          }
       }  
 
+		private string testVoid(string _value)
+		{
+			// git rid of this when databound control updated
+			if (_value == null || _value.Length == 0) { return " "; }
+			return _value;
+		}
 
       private void menuItemExit_Click(object sender, EventArgs e)
       {
@@ -121,17 +125,16 @@ namespace Metadata_Manager.Forms
          PdfDocumentInfo targetInfo;
 
 			Record Record = new();
-
-         // Locate file to change and reopen for writing
-         Record.FileName = dataGridMain.CurrentRow.Cells[1].Value.ToString();
+		 // Locate file to change and reopen for writing
+			Record.FileName = dataGridMain.CurrentRow.Cells[1].Value.ToString();
          Record.FilePath = dataGridMain.CurrentRow.Cells[6].Value.ToString();
 
          sourceDocument = new PdfDocument(new PdfReader(Record.FilePath));
+
+
          targetDocument = new PdfDocument(new PdfWriter("./Test" + Record.FileName + ".pdf"));	// Check this - are all of the original properties going too? ** Fix This to duplicate whole file
          sourceDocument.CopyPagesTo(1, sourceDocument.GetNumberOfPages(), targetDocument);
          targetInfo = sourceDocument.GetDocumentInfo();
-
-         // Crashing when field is null - need to create if it does not exist
 
          Record.Title = dataGridMain.CurrentRow.Cells[2].Value.ToString();
          Record.Author = dataGridMain.CurrentRow.Cells[3].Value.ToString();
@@ -141,14 +144,13 @@ namespace Metadata_Manager.Forms
          targetDocument.GetDocumentInfo().SetTitle(Record.Title + " standard");
          targetInfo.SetAuthor(Record.Author + "standard");
 
-         // Dublin Core namespace
+			// Dublin Core namespace
          targetDocument.GetDocumentInfo().SetAuthor(Record.Author);  // dc:creator
          targetDocument.GetDocumentInfo().SetTitle(Record.Title);    //dc:title
 
-         //  Adobe pdfx namespace
+         //  Adobe pdfx namespac`e
          targetDocument.GetDocumentInfo().SetMoreInfo("RecordSeries", Record.RecordSeries);
          targetDocument.GetDocumentInfo().SetMoreInfo("Published", Record.Published);
-         //targetDocument.GetDocumentInfo().SetMoreInfo("Description", Record.Description);
 
          targetDocument.Close();
          sourceDocument.Close();

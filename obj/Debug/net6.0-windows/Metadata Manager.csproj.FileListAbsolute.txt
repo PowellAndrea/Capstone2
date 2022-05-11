@@ -26,9 +26,7 @@ E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Microsoft.Extensions.Pr
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata Manager.csproj.AssemblyReference.cache
 E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata_Manager.Forms.Landing.resources
-E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata_Manager.gridPdf.resources
 E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata_Manager.Properties.Resources.resources
-E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata_Manager.UserControl1.resources
 E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata Manager.csproj.GenerateResource.cache
 E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata Manager.GeneratedMSBuildEditorConfig.editorconfig
 E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata Manager.AssemblyInfoInputs.cache
