@@ -240,6 +240,13 @@ namespace Metadata_Manager.Forms
 
 		}
 
+		// Horray for Spaghetti Code
+		public string EscapeComma(string _value)
+		{
+			return _value.Replace(",", "-");
+
+		}
+
 		private void ExportData(object sender, EventArgs e)
 		{
 			SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -255,6 +262,7 @@ namespace Metadata_Manager.Forms
 
 				switch (ext)
 				{
+					// this code is ugly - do something - override ToString?  Probably fixed with databinding setup (agh)
 					case "csv":
 						// Header Cells
 						writer.Write("File Name, ");
@@ -262,17 +270,17 @@ namespace Metadata_Manager.Forms
 						writer.Write("Author, ");
 						writer.Write("Published, ");
 						writer.Write("Record Series, ");
-						writer.Write("File Path");
+						writer.Write("File Path,");
 						writer.WriteLine("");
 
 						foreach (DataGridViewRow row in dataGridMain.Rows)
 						{
-							writer.Write(row.Cells["FileName"].Value.ToString() + ",");
-							writer.Write(row.Cells["Title"].Value.ToString() + ",");
-							writer.Write(row.Cells["Author"].Value.ToString() + ",");
-							writer.Write(row.Cells["Published"].Value.ToString() + ",");
-							writer.Write(row.Cells["RecordSeries"].Value.ToString() + ",");
-							writer.Write(row.Cells["FilePath"].Value.ToString() + ",");
+							writer.Write(row.Cells["FileName"].Value.ToString().Replace(",", "-") + ",");
+							writer.Write(row.Cells["Title"].Value.ToString().Replace(",", "-") + ",");
+							writer.Write(row.Cells["Author"].Value.ToString().Replace(",", "-") + ",");
+							writer.Write(row.Cells["Published"].FormattedValue.ToString().Replace(",", "-") + ",");
+							writer.Write(row.Cells["RecordSeries"].Value.ToString().Replace(",", "-") + ",");
+							writer.Write(row.Cells["FilePath"].Value.ToString().Replace(",", "-") + ",");
 							writer.WriteLine("");
 						}
 
@@ -283,19 +291,19 @@ namespace Metadata_Manager.Forms
 						writer.Write("File Name, ");
 						writer.Write("Title, ");
 						writer.Write("Author, ");
-						writer.Write("Published");
+						writer.Write("Published, ");
 						writer.Write("Record Series, ");
-						writer.Write("File Path, ");
+						writer.Write("File Path,");
 						writer.WriteLine("");
 
 						foreach (DataGridViewRow row in dataGridMain.Rows)
 						{
-							writer.Write(row.Cells["FileName"].Value.ToString() + ",");
-							writer.Write(row.Cells["Title"].Value.ToString() + ",");
-							writer.Write(row.Cells["Author"].Value.ToString() + ",");
-							writer.Write(row.Cells["Published"].Value.ToString() + ",");
-							writer.Write(row.Cells["RecordSeries"].Value.ToString() + ",");
-							writer.Write(row.Cells["FilePath"].Value.ToString() + ",");
+							writer.Write(row.Cells["FileName"].Value.ToString().Replace(",", "-") + ",");
+							writer.Write(row.Cells["Title"].Value.ToString().Replace(",", "-") + ",");
+							writer.Write(row.Cells["Author"].Value.ToString().Replace(",", "-") + ",");
+							writer.Write(row.Cells["Published"].FormattedValue.ToString().Replace(",", "-") + ",");
+							writer.Write(row.Cells["RecordSeries"].Value.ToString().Replace(",", "-") + ",");
+							writer.Write(row.Cells["FilePath"].Value.ToString().Replace(",", "-") + ",");
 							writer.WriteLine("");
 						}
 
