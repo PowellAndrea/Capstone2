@@ -44,6 +44,18 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "DocumentFormat.OpenXml": {
+              "target": "Package",
+              "version": "[2.16.0, )"
+            },
+            "System.Collections": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.IO.Packaging": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Uno.Microsoft.Toolkit.Uwp.UI.Controls.DataGrid": {
               "target": "Package",
               "version": "[7.1.11, )"

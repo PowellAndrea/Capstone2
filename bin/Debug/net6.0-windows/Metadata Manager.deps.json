@@ -8,11 +8,25 @@
     ".NETCoreApp,Version=v6.0": {
       "Metadata Manager/1.0.0": {
         "dependencies": {
+          "DocumentFormat.OpenXml": "2.16.0",
+          "System.Collections": "4.3.0",
+          "System.IO.Packaging": "5.0.0",
           "Uno.Microsoft.Toolkit.Uwp.UI.Controls.DataGrid": "7.1.11",
           "itext7": "7.2.2"
         },
         "runtime": {
           "Metadata Manager.dll": {}
+        }
+      },
+      "DocumentFormat.OpenXml/2.16.0": {
+        "dependencies": {
+          "System.IO.Packaging": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/DocumentFormat.OpenXml.dll": {
+            "assemblyVersion": "2.16.0.0",
+            "fileVersion": "2.16.0.0"
+          }
         }
       },
       "itext7/7.2.2": {
@@ -452,6 +466,7 @@
           "System.Runtime": "4.3.1"
         }
       },
+      "System.IO.Packaging/5.0.0": {},
       "System.Linq/4.3.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -906,6 +921,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "DocumentFormat.OpenXml/2.16.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RhpnDgyyx1KjZm98T3w3bSXFHG/7ZNUaVmz4NAUA+jmV3PcVNZeW87Y04CpBNLdDHEMSspirfo0B5kLRaoE97w==",
+      "path": "documentformat.openxml/2.16.0",
+      "hashPath": "documentformat.openxml.2.16.0.nupkg.sha512"
+    },
     "itext7/7.2.2": {
       "type": "package",
       "serviceable": true,
@@ -1234,6 +1256,13 @@
       "sha512": "sha512-6QOb2XFLch7bEc4lIcJH49nJN2HV+OC3fHDgsLVsBVBk3Y4hFAnOBGzJ2lUu7CyDDFo9IBWkSsnbkT6IBwwiMw==",
       "path": "system.io.filesystem.primitives/4.3.0",
       "hashPath": "system.io.filesystem.primitives.4.3.0.nupkg.sha512"
+    },
+    "System.IO.Packaging/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ebfUwKsgZF4HTwaRUj67SrJdsM4O62Fxsd6u1bSk3MNgvU8yjyfEK0xQmUFUqOYJi1IcL4HENoccl4SKVPndYw==",
+      "path": "system.io.packaging/5.0.0",
+      "hashPath": "system.io.packaging.5.0.0.nupkg.sha512"
     },
     "System.Linq/4.3.0": {
       "type": "package",

@@ -1,0 +1,197 @@
+﻿++Solution 'Metadata Manager' ‎(1 of 1 project)
+i:{00000000-0000-0000-0000-000000000000}:Metadata Manager.sln
+++Solution Items
+i:{00000000-0000-0000-0000-000000000000}:Solution Items
+++Backup Validation - old.txt
+i:{183c70b0-4dba-4372-afb6-30f4326a4272}:E:\_SourceCode\Metadata Manager\Backup Validation - old.txt
+++Metadata Manager
+i:{00000000-0000-0000-0000-000000000000}:Metadata Manager
+++Dependencies
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:>5683
+++Properties
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\properties\
+++Documentation
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\documentation\
+++Forms
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\forms\
+++Landing.cs
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\forms\landing.cs
+++Landing.Designer.cs
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\forms\landing.designer.cs
+++Landing.resx
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\forms\landing.resx
+++Models
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\models\
+++Author.cs
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\models\author.cs
+++EditingGrid.cs
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\models\editinggrid.cs
+++EditingGridView.cs
+++PdfRecord.cs
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\models\pdfrecord.cs
+++Record.cs
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\models\record.cs
+++Resources
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\resources\
+++TEST
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\test\
+++.editorconfig
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\.editorconfig
+++GlobalSuppressions.cs
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\globalsuppressions.cs
+++Program.cs
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\program.cs
+++Analyzers
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:analyzers
+++Frameworks
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:frameworks
+++Packages
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:packages
+++DataSources
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\properties\datasources\
+++Resources.Designer.cs
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\properties\resources.designer.cs
+++Resources.resx
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\properties\resources.resx
+++Settings.settings
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\properties\settings.settings
+++Backups
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\documentation\backups\
+++SRS - Metadata Manager.docx
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\documentation\srs - metadata manager.docx
+++10933874_10153225567976055_221955128676326778_n.jpg
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\resources\10933874_10153225567976055_221955128676326778_n.jpg
+++MoreInfoIcon.png
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\resources\moreinfoicon.png
+++example Puget Sound Dispatch 14 September 1878.pdf
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\test\example puget sound dispatch 14 september 1878.pdf
+++Reminiscences of an Old Timer.pdf
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\test\reminiscences of an old timer.pdf
+++Washington Standard 14 September 1878 — Washington Digital Newspapers.pdf
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\test\washington standard 14 september 1878 — washington digital newspapers.pdf
+++White-Parker Family Bible.pdf
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\test\white-parker family bible.pdf
+++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+++Microsoft.CodeAnalysis.NetAnalyzers
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:c:\program files\dotnet\sdk\6.0.202\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+++System.Text.Json.SourceGeneration
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.4\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+++System.Windows.Forms.Analyzers
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:c:\program files\dotnet\packs\microsoft.windowsdesktop.app.ref\6.0.4\analyzers\dotnet\system.windows.forms.analyzers.dll
+++System.Windows.Forms.Analyzers.CSharp
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:c:\program files\dotnet\packs\microsoft.windowsdesktop.app.ref\6.0.4\analyzers\dotnet\cs\system.windows.forms.analyzers.csharp.dll
+++Microsoft.NETCore.App
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\microsoft.netcore.app
+++Microsoft.WindowsDesktop.App.WindowsForms
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\microsoft.windowsdesktop.app.windowsforms
+++itext7 (7.2.2)
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:>5692
+++iTextSharp (5.5.13.3)
+++Metadata_Manager.Models.PdfRecord.datasource
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\properties\datasources\metadata_manager.models.pdfrecord.datasource
+++Metadata_Manager.Properties.Settings.datasource
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\properties\datasources\metadata_manager.properties.settings.datasource
+++Record.datasource
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\properties\datasources\record.datasource
+++Settings.Designer.cs
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\properties\settings.designer.cs
+++Landing.zip
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\documentation\backups\landing.zip
+++Validing and Writing.txt
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:e:\_sourcecode\metadata manager\documentation\backups\validing and writing.txt
+++Uno.Microsoft.Toolkit.Uwp.UI.Controls.DataGrid (7.1.11)
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:>5808
+++Uno.Analyzers
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:c:\users\andrea\.nuget\packages\uno.ui\4.0.0-dev.5688\analyzers\uno.analyzers.dll
+++Microsoft.ApplicationInsights
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:c:\users\andrea\.nuget\packages\uno.ui\4.0.0-dev.5688\analyzers\dotnet\cs\microsoft.applicationinsights.dll
+++Microsoft.DotNet.PlatformAbstractions
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:c:\users\andrea\.nuget\packages\uno.ui\4.0.0-dev.5688\analyzers\dotnet\cs\microsoft.dotnet.platformabstractions.dll
+++Uno.Xaml
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:c:\users\andrea\.nuget\packages\uno.ui\4.0.0-dev.5688\analyzers\dotnet\cs\uno.xaml.dll
+++Mono.Cecil
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:c:\users\andrea\.nuget\packages\uno.ui\4.0.0-dev.5688\analyzers\dotnet\cs\mono.cecil.dll
+++Mono.Cecil.Mdb
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:c:\users\andrea\.nuget\packages\uno.ui\4.0.0-dev.5688\analyzers\dotnet\cs\mono.cecil.mdb.dll
+++Mono.Cecil.Pdb
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:c:\users\andrea\.nuget\packages\uno.ui\4.0.0-dev.5688\analyzers\dotnet\cs\mono.cecil.pdb.dll
+++Mono.Cecil.Rocks
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:c:\users\andrea\.nuget\packages\uno.ui\4.0.0-dev.5688\analyzers\dotnet\cs\mono.cecil.rocks.dll
+++System.Diagnostics.DiagnosticSource
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:c:\users\andrea\.nuget\packages\uno.ui\4.0.0-dev.5688\analyzers\dotnet\cs\system.diagnostics.diagnosticsource.dll
+++rmnklsm3.p4z~
+++Solution 'Metadata Manager' ‎(2 of 2 projects)
+++WpfControlLibrary
+++References
+++UserControl1.xaml
+++AssemblyInfo.cs
+++Microsoft.CSharp
+++PresentationCore
+++PresentationFramework
+++System
+++System.Core
+++System.Data
+++System.Data.DataSetExtensions
+++System.Net.Http
+++System.Xaml
+++System.Xml
+++System.Xml.Linq
+++WindowsBase
+++UserControl1.xaml.cs
+++obj
+++Debug
+++.NETFramework,Version=v4.8.AssemblyAttributes.cs
+++DesignTimeResolveAssemblyReferences.cache
+++DesignTimeResolveAssemblyReferencesInput.cache
+++UserControl1.g.i.cs
+++WpfControlLibrary.csproj.AssemblyReference.cache
+++WpfControlLibrary_MarkupCompile.i.cache
+++WpfControlLibrary_MarkupCompile.i.lref
+++RecordDataGrid.xaml
+++RecordDataGrid.xaml.cs
+++RecordDataGrid.g.i.cs
+++44l11cmm.5ib~
+++RecordControl.xaml
+++RecordControl.xaml.cs
+++RecordControl.g.i.cs
+++RecordControl.g.cs
+++WpfControlLibrary_MarkupCompile.cache
+++WpfControlLibrary_MarkupCompile.lref
+++WpfControlLibrary.dll
+++WpfControlLibrary.pdb
+++bin
+++RecordControl.baml
+++WpfControlLibrary.g.resources
+++WpfControlLibrary.Properties.Resources.resources
+++WpfControlLibrary.csproj.CoreCompileInputs.cache
+++WpfControlLibrary.csproj.FileListAbsolute.txt
+++WpfControlLibrary.csproj.GenerateResource.cache
+++RecordDataSet.xsd
+++RecordDataSet.Designer.cs
+++RecordDataSet.xsc
+++RecordDataSet.xss
+++TempPE
+++Properties.Resources.Designer.cs.dll
+++RecordDataSet.Designer.cs.dll
+++RecordDataSet.cs
+++DataSet1.xsd
+++DataSet1.Designer.cs
+++DataSet1.xsc
+++DataSet1.xss
+++DataSet1.Designer.cs.dll
+++voqkri3f.qg4~
+++RecordUserControl.xaml
+++RecordUserControl.xaml.cs
+++ovnzawl1.bej~
+++vzdmh1cn.ifw~
+++fu2snomk.caa~
+++wy2bkrg5.ntr~
+++bw3qb1sd.vp2~
+++System.Collections (4.3.0)
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:>6334
+++DocumentFormat.OpenXml (2.16.0)
+i:{a2ab7611-afdc-4a4f-b9b2-6256d9d0b540}:>6337
+++50ho5ani.051~
+++xesnqmri.sdc~
+++flau0sba.dnh~

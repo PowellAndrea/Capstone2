@@ -30,7 +30,7 @@ namespace Metadata_Manager
       #region Class Properties
       // issues with internal and private strings - get/set revisit later
 
-      internal Guid FileId;
+      internal Guid RecordId;
       /// PDF Internal version ID  xmpMM:InstanceID
       //public string PdfInstanceId;
       //internal string getDFWId { get; set; }
@@ -59,6 +59,8 @@ namespace Metadata_Manager
 
       public Record()
         {
+			RecordId = Guid.NewGuid();
+
             // - chante to RecordID - several keys here to add. FileId = new Guid();
             //PdfInstanceId = string.Empty; // PDF Internal version ID - needs review  xmpMM:InstanceID
             FilePath = "  ";

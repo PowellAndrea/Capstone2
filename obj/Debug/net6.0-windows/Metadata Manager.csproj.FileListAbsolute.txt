@@ -1,8 +1,17 @@
+E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata Manager.csproj.AssemblyReference.cache
+E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata_Manager.Forms.Landing.resources
+E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata_Manager.Properties.Resources.resources
+E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata Manager.csproj.GenerateResource.cache
+E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata Manager.GeneratedMSBuildEditorConfig.editorconfig
+E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata Manager.AssemblyInfoInputs.cache
+E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata Manager.AssemblyInfo.cs
+E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata Manager.csproj.CoreCompileInputs.cache
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Metadata Manager.exe
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Metadata Manager.deps.json
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Metadata Manager.runtimeconfig.json
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Metadata Manager.dll
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Metadata Manager.pdb
+E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\DocumentFormat.OpenXml.dll
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\itext.barcodes.dll
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\itext.forms.dll
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\itext.io.dll
@@ -37,14 +46,6 @@ E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Uno.UI.Toolkit.dll
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Uno.UI.dll
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Uno.Xaml.dll
 E:\_SourceCode\Metadata Manager\bin\Debug\net6.0-windows\Uno.dll
-E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata Manager.csproj.AssemblyReference.cache
-E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata_Manager.Forms.Landing.resources
-E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata_Manager.Properties.Resources.resources
-E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata Manager.csproj.GenerateResource.cache
-E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata Manager.GeneratedMSBuildEditorConfig.editorconfig
-E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata Manager.AssemblyInfoInputs.cache
-E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata Manager.AssemblyInfo.cs
-E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata Manager.csproj.CoreCompileInputs.cache
 E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata Manager.csproj.CopyComplete
 E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\Metadata Manager.dll
 E:\_SourceCode\Metadata Manager\obj\Debug\net6.0-windows\refint\Metadata Manager.dll
