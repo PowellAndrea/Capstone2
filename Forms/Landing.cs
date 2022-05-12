@@ -200,10 +200,7 @@ namespace Metadata_Manager.Forms
 			}
 		}
 
-		private void menuMain_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-		{
 
-		}
 
 		private void exportTocsvToolStripMenuItem_Click(object sender, EventArgs e)
 		{
@@ -240,15 +237,14 @@ namespace Metadata_Manager.Forms
 
 		}
 
-		// Horray for Spaghetti Code
-		public string EscapeComma(string _value)
-		{
-			return _value.Replace(",", "-");
-
-		}
-
 		private void ExportData(object sender, EventArgs e)
 		{
+			if (MessageBox.Show("Export All?", "Export Options", MessageBoxButtons.YesNo) == DialogResult.No) {
+				// No = Selected Only  
+				MessageBox.Show("Working on Multi-Select filtered output");
+			};          // Default = Yes = All Data in Grid
+
+
 			SaveFileDialog saveFileDialog = new SaveFileDialog();
 			saveFileDialog.Filter = "CSV (*.csv) |*.csv| Text (*.txt)|*.txt | Excel (*.xlsx) | *.xlsx";
 
@@ -263,6 +259,7 @@ namespace Metadata_Manager.Forms
 				switch (ext)
 				{
 					// this code is ugly - do something - override ToString?  Probably fixed with databinding setup (agh)
+					// csv & text look the same?  Move these to the default case & only handle the Excel files.
 					case "csv":
 						// Header Cells
 						writer.Write("File Name, ");
@@ -307,7 +304,7 @@ namespace Metadata_Manager.Forms
 							writer.WriteLine("");
 						}
 
-						break; ;
+						break;
 
 					case "xlsx":
 						DataTable dt = new DataTable();

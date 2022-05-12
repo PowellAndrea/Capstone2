@@ -57,7 +57,6 @@
 			this.menuMain.Size = new System.Drawing.Size(1055, 24);
 			this.menuMain.TabIndex = 0;
 			this.menuMain.Text = "Main Menu";
-			this.menuMain.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuMain_ItemClicked);
 			// 
 			// menuItemFile
 			// 
@@ -71,14 +70,14 @@
 			// menuItemOpenPdf
 			// 
 			this.menuItemOpenPdf.Name = "menuItemOpenPdf";
-			this.menuItemOpenPdf.Size = new System.Drawing.Size(137, 22);
+			this.menuItemOpenPdf.Size = new System.Drawing.Size(180, 22);
 			this.menuItemOpenPdf.Text = "Open pdf(s)";
 			this.menuItemOpenPdf.Click += new System.EventHandler(this.openPdfsToolStripMenuItem_Click);
 			// 
 			// menuItemExit
 			// 
 			this.menuItemExit.Name = "menuItemExit";
-			this.menuItemExit.Size = new System.Drawing.Size(137, 22);
+			this.menuItemExit.Size = new System.Drawing.Size(180, 22);
 			this.menuItemExit.Text = "Exit";
 			this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
 			// 
