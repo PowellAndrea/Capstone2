@@ -239,9 +239,13 @@ namespace Metadata_Manager.Forms
 
 		private void ExportData(object sender, EventArgs e)
 		{
+			bool selectedOnly = false;
+
 			if (MessageBox.Show("Export All?", "Export Options", MessageBoxButtons.YesNo) == DialogResult.No) {
-				// No = Selected Only  
+				// No = Selected Only
+				selectedOnly = true;
 				MessageBox.Show("Working on Multi-Select filtered output");
+
 			};          // Default = Yes = All Data in Grid
 
 
@@ -261,6 +265,7 @@ namespace Metadata_Manager.Forms
 					// this code is ugly - do something - override ToString?  Probably fixed with databinding setup (agh)
 					// csv & text look the same?  Move these to the default case & only handle the Excel files.
 					case "csv":
+						#region Write to CSV
 						// Header Cells
 						writer.Write("File Name, ");
 						writer.Write("Title, ");
@@ -272,18 +277,36 @@ namespace Metadata_Manager.Forms
 
 						foreach (DataGridViewRow row in dataGridMain.Rows)
 						{
-							writer.Write(row.Cells["FileName"].Value.ToString().Replace(",", "-") + ",");
-							writer.Write(row.Cells["Title"].Value.ToString().Replace(",", "-") + ",");
-							writer.Write(row.Cells["Author"].Value.ToString().Replace(",", "-") + ",");
-							writer.Write(row.Cells["Published"].FormattedValue.ToString().Replace(",", "-") + ",");
-							writer.Write(row.Cells["RecordSeries"].Value.ToString().Replace(",", "-") + ",");
-							writer.Write(row.Cells["FilePath"].Value.ToString().Replace(",", "-") + ",");
-							writer.WriteLine("");
-						}
+							if (selectedOnly)
+							{
+								if (row.Cells["Selected"].Selected)
+								{
+									writer.Write(row.Cells["FileName"].Value.ToString().Replace(",", "-") + ",");
+									writer.Write(row.Cells["Title"].Value.ToString().Replace(",", "-") + ",");
+									writer.Write(row.Cells["Author"].Value.ToString().Replace(",", "-") + ",");
+									writer.Write(row.Cells["Published"].FormattedValue.ToString().Replace(",", "-") + ",");
+									writer.Write(row.Cells["RecordSeries"].Value.ToString().Replace(",", "-") + ",");
+									writer.Write(row.Cells["FilePath"].Value.ToString().Replace(",", "-") + ",");
+									writer.WriteLine("");
+								}
+							}
+							else
+							{
 
+								writer.Write(row.Cells["FileName"].Value.ToString().Replace(",", "-") + ",");
+								writer.Write(row.Cells["Title"].Value.ToString().Replace(",", "-") + ",");
+								writer.Write(row.Cells["Author"].Value.ToString().Replace(",", "-") + ",");
+								writer.Write(row.Cells["Published"].FormattedValue.ToString().Replace(",", "-") + ",");
+								writer.Write(row.Cells["RecordSeries"].Value.ToString().Replace(",", "-") + ",");
+								writer.Write(row.Cells["FilePath"].Value.ToString().Replace(",", "-") + ",");
+								writer.WriteLine("");
+							}
+						}
 						break;
+					#endregion
 
 					case "txt":
+						#region Write to Text File
 						// Header Cells
 						writer.Write("File Name, ");
 						writer.Write("Title, ");
@@ -293,20 +316,39 @@ namespace Metadata_Manager.Forms
 						writer.Write("File Path,");
 						writer.WriteLine("");
 
+
 						foreach (DataGridViewRow row in dataGridMain.Rows)
 						{
-							writer.Write(row.Cells["FileName"].Value.ToString().Replace(",", "-") + ",");
-							writer.Write(row.Cells["Title"].Value.ToString().Replace(",", "-") + ",");
-							writer.Write(row.Cells["Author"].Value.ToString().Replace(",", "-") + ",");
-							writer.Write(row.Cells["Published"].FormattedValue.ToString().Replace(",", "-") + ",");
-							writer.Write(row.Cells["RecordSeries"].Value.ToString().Replace(",", "-") + ",");
-							writer.Write(row.Cells["FilePath"].Value.ToString().Replace(",", "-") + ",");
-							writer.WriteLine("");
-						}
+							if (selectedOnly)
+							{
+								if (row.Cells["Selected"].Selected)
+								{
+									writer.Write(row.Cells["FileName"].Value.ToString().Replace(",", "-") + ",");
+									writer.Write(row.Cells["Title"].Value.ToString().Replace(",", "-") + ",");
+									writer.Write(row.Cells["Author"].Value.ToString().Replace(",", "-") + ",");
+									writer.Write(row.Cells["Published"].FormattedValue.ToString().Replace(",", "-") + ",");
+									writer.Write(row.Cells["RecordSeries"].Value.ToString().Replace(",", "-") + ",");
+									writer.Write(row.Cells["FilePath"].Value.ToString().Replace(",", "-") + ",");
+									writer.WriteLine("");
+								}
+							}
+							else
+							{
 
+								writer.Write(row.Cells["FileName"].Value.ToString().Replace(",", "-") + ",");
+								writer.Write(row.Cells["Title"].Value.ToString().Replace(",", "-") + ",");
+								writer.Write(row.Cells["Author"].Value.ToString().Replace(",", "-") + ",");
+								writer.Write(row.Cells["Published"].FormattedValue.ToString().Replace(",", "-") + ",");
+								writer.Write(row.Cells["RecordSeries"].Value.ToString().Replace(",", "-") + ",");
+								writer.Write(row.Cells["FilePath"].Value.ToString().Replace(",", "-") + ",");
+								writer.WriteLine("");
+							}
+						}
+						#endregion
 						break;
 
 					case "xlsx":
+						#region Write to Excel
 						DataTable dt = new DataTable();
 						dt.Columns.Add("File Name");
 						dt.Columns.Add("Title");
@@ -324,11 +366,15 @@ namespace Metadata_Manager.Forms
 							dt.Rows.Add(row.Cells["Record Series"].Value.ToString());
 							dt.Rows.Add(row.Cells["File Path"].Value.ToString());
 						}
+						#endregion
 						break;
 				};
 
 				writer.Close();
 				MessageBox.Show("File Created");
+			} else
+			{
+				MessageBox.Show("Error creating file");
 			}
 		}
 	}
