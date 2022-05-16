@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "h/XUmO49B6Fn1aNEbDSskTe1KSokLZ9+WsoWjt/KXdKEu5d1wkKnHjlWKwmm7ec5mhaBfLtuK5DB8cf4DDWQrQ==",
+  "dgSpecHash": "zSQAQl2CjBfr8V3cyiLxGlSC6svOwMl/PEjKz/bdvvEdVIvj4S5W3W2gXeHMZ6sg3X+Qb4A41g04BgZIGs9E2w==",
   "success": true,
   "projectFilePath": "E:\\_SourceCode\\Metadata Manager\\Metadata Manager.csproj",
   "expectedPackageFiles": [
@@ -112,7 +112,8 @@
     "C:\\Users\\Andrea\\.nuget\\packages\\uno.foundation.logging\\4.0.0-dev.5688\\uno.foundation.logging.4.0.0-dev.5688.nupkg.sha512",
     "C:\\Users\\Andrea\\.nuget\\packages\\uno.microsoft.toolkit.uwp.ui.controls.datagrid\\7.1.11\\uno.microsoft.toolkit.uwp.ui.controls.datagrid.7.1.11.nupkg.sha512",
     "C:\\Users\\Andrea\\.nuget\\packages\\uno.sourcegenerationtasks\\3.2.0\\uno.sourcegenerationtasks.3.2.0.nupkg.sha512",
-    "C:\\Users\\Andrea\\.nuget\\packages\\uno.ui\\4.0.0-dev.5688\\uno.ui.4.0.0-dev.5688.nupkg.sha512"
+    "C:\\Users\\Andrea\\.nuget\\packages\\uno.ui\\4.0.0-dev.5688\\uno.ui.4.0.0-dev.5688.nupkg.sha512",
+    "C:\\Users\\Andrea\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22000.24\\microsoft.windows.sdk.net.ref.10.0.22000.24.nupkg.sha512"
   ],
   "logs": []
 }

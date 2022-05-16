@@ -32,6 +32,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Packaging;
 // needed to target v 5.0.0 of System.IO.Packaging to make DocumentFormat work ?
+
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
@@ -209,7 +210,7 @@ namespace Metadata_Manager.Forms
 
 			if (saveFileDialog.ShowDialog() == DialogResult.OK)
 			{
-				TextWriter writer = new StreamWriter(saveFileDialog.FileName);
+				System.IO.TextWriter writer = new System.IO.StreamWriter(saveFileDialog.FileName);
 				// Header Cells
 				writer.Write("File Name, ");
 				writer.Write("Title, ");
@@ -252,8 +253,7 @@ namespace Metadata_Manager.Forms
 				// get extention used
 				string fileName = saveFileDialog.FileName;
 				string ext = fileName.Substring(fileName.Length - 3);
-				TextWriter writer = new StreamWriter(saveFileDialog.FileName);
-				//StreamWriter writer2 = new StreamWriter(saveFileDialog.FileName);
+				System.IO.StreamWriter writer = new System.IO.StreamWriter(saveFileDialog.FileName);
 
 				switch (ext)
 				{
@@ -342,12 +342,10 @@ namespace Metadata_Manager.Forms
 						#endregion
 						break;
 
-					case "xlsx":
+					case "lsx":
 						#region Write to Excel
-						MemoryStream stream = new MemoryStream();
-
-						SpreadsheetDocument spreadsheetDocument =
-							SpreadsheetDocument.Create("/", SpreadsheetDocumentType.Workbook);
+						writer.Close();
+						SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Create(fileName, SpreadsheetDocumentType.Workbook);
 
 							// Add a WorkbookPart to the document.
 							WorkbookPart workbookpart = spreadsheetDocument.AddWorkbookPart();
@@ -357,18 +355,11 @@ namespace Metadata_Manager.Forms
 							WorksheetPart worksheetPart = workbookpart.AddNewPart<WorksheetPart>();
 							worksheetPart.Worksheet = new Worksheet(new SheetData());
 
-							// Add Sheets to the Workbook.
-							Sheets sheets = spreadsheetDocument.WorkbookPart.Workbook.
-								AppendChild<Sheets>(new Sheets());
+						// Add Sheets to the Workbook.
+						Sheets sheets = spreadsheetDocument.WorkbookPart.Workbook.AppendChild<Sheets>(new Sheets());
 
 						// Append a new worksheet and associate it with the workbook.
-						Sheet sheet = new Sheet()
-						{
-							Id = spreadsheetDocument.WorkbookPart.
-							GetIdOfPart(worksheetPart),
-							SheetId = 1,
-							Name = "mySheet"
-						};
+						Sheet sheet = new Sheet() { Id = spreadsheetDocument.WorkbookPart.GetIdOfPart(worksheetPart), SheetId = 1, Name = "mySheet" };
 						sheets.Append(sheet);
 
 						workbookpart.Workbook.Save();
@@ -384,7 +375,7 @@ namespace Metadata_Manager.Forms
 						//cells.Add(new Cell("Published"));
 						//cells.Add(new Cell("File Path"));
 
-						//ExcelPackage excelPackage = new ExcelPackage(stream);
+						////ExcelPackage excelPackage = new ExcelPackage(stream);
 
 						//var workSheet = excelPackage.Workbook.Worksheets.Add("Data");
 						//workSheet.Cells.LoadFromCollection(cells, true);
