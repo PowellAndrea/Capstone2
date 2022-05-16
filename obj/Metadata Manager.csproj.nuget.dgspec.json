@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[2.16.0, )"
             },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[6.0.4, )"
+            },
             "System.Collections": {
               "target": "Package",
               "version": "[4.3.0, )"

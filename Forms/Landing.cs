@@ -36,6 +36,7 @@ using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using Color = System.Drawing.Color;
+using OfficeOpenXml;
 
 namespace Metadata_Manager.Forms
 {
@@ -189,7 +190,6 @@ namespace Metadata_Manager.Forms
 			}
 		}
 
-
 		private void TurnGreen(object sender, DataGridViewCellEventArgs e)
 		{
 			// Got to be an easier way to do this at the row level;
@@ -199,8 +199,6 @@ namespace Metadata_Manager.Forms
 				dataGridMain.Refresh();
 			}
 		}
-
-
 
 		private void exportTocsvToolStripMenuItem_Click(object sender, EventArgs e)
 		{
@@ -244,10 +242,7 @@ namespace Metadata_Manager.Forms
 			if (MessageBox.Show("Export All?", "Export Options", MessageBoxButtons.YesNo) == DialogResult.No) {
 				// No = Selected Only
 				selectedOnly = true;
-				MessageBox.Show("Working on Multi-Select filtered output");
-
-			};          // Default = Yes = All Data in Grid
-
+			};  // Default = Yes = All Data in Grid
 
 			SaveFileDialog saveFileDialog = new SaveFileDialog();
 			saveFileDialog.Filter = "CSV (*.csv) |*.csv| Text (*.txt)|*.txt | Excel (*.xlsx) | *.xlsx";
@@ -349,23 +344,52 @@ namespace Metadata_Manager.Forms
 
 					case "xlsx":
 						#region Write to Excel
-						DataTable dt = new DataTable();
-						dt.Columns.Add("File Name");
-						dt.Columns.Add("Title");
-						dt.Columns.Add("Author");
-						dt.Columns.Add("Published");
-						dt.Columns.Add("Record Series");
-						dt.Columns.Add("File Path");
+						MemoryStream stream = new MemoryStream();
 
-						foreach (DataGridViewRow row in dataGridMain.Rows)
+						SpreadsheetDocument spreadsheetDocument =
+							SpreadsheetDocument.Create("/", SpreadsheetDocumentType.Workbook);
+
+							// Add a WorkbookPart to the document.
+							WorkbookPart workbookpart = spreadsheetDocument.AddWorkbookPart();
+							workbookpart.Workbook = new Workbook();
+
+							// Add a WorksheetPart to the WorkbookPart
+							WorksheetPart worksheetPart = workbookpart.AddNewPart<WorksheetPart>();
+							worksheetPart.Worksheet = new Worksheet(new SheetData());
+
+							// Add Sheets to the Workbook.
+							Sheets sheets = spreadsheetDocument.WorkbookPart.Workbook.
+								AppendChild<Sheets>(new Sheets());
+
+						// Append a new worksheet and associate it with the workbook.
+						Sheet sheet = new Sheet()
 						{
-							dt.Rows.Add(row.Cells["FileName"].Value.ToString());
-							dt.Rows.Add(row.Cells["Title"].Value.ToString());
-							dt.Rows.Add(row.Cells["Author"].Value.ToString());
-							dt.Rows.Add(row.Cells["Published"].Value.ToString());
-							dt.Rows.Add(row.Cells["Record Series"].Value.ToString());
-							dt.Rows.Add(row.Cells["File Path"].Value.ToString());
-						}
+							Id = spreadsheetDocument.WorkbookPart.
+							GetIdOfPart(worksheetPart),
+							SheetId = 1,
+							Name = "mySheet"
+						};
+						sheets.Append(sheet);
+
+						workbookpart.Workbook.Save();
+
+						// Close the document.
+						spreadsheetDocument.Close();
+
+						//List<Cell> cells = new List<Cell>();
+						//// Mark these as Excel header rows?
+						//cells.Add(new Cell("File Name"));
+						//cells.Add(new Cell("Title"));
+						//cells.Add(new Cell("Author"));
+						//cells.Add(new Cell("Published"));
+						//cells.Add(new Cell("File Path"));
+
+						//ExcelPackage excelPackage = new ExcelPackage(stream);
+
+						//var workSheet = excelPackage.Workbook.Worksheets.Add("Data");
+						//workSheet.Cells.LoadFromCollection(cells, true);
+						//excelPackage.Save();
+
 						#endregion
 						break;
 				};
@@ -379,3 +403,7 @@ namespace Metadata_Manager.Forms
 		}
 	}
 }
+
+
+
+
